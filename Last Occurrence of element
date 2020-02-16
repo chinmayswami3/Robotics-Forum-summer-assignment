@@ -1,0 +1,36 @@
+//Program to find the last occurence of the element in the array
+import java.util.Scanner;
+class Last_occurence_of_element
+{
+    public static void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        int a[],i,n,num,c=-1;
+        System.out.print("Enter number of elements: ");
+        n=sc.nextInt();
+        System.out.println("");
+        a=new int[n];
+        for(i=0;i<n;i++)
+        {
+            System.out.print("Enter element: ");
+            a[i]=sc.nextInt();
+            System.out.println("");
+        }
+        System.out.print("Enter number to check for index: ");
+        num=sc.nextInt();
+        System.out.println("");
+        for(i=n-1;i>=0;i--)
+        {
+            if(a[i]==num)
+            {
+                c=i+1;
+                System.out.println("Last occurence is at index: "+c);
+                break;
+            }
+        }
+        if(c==-1)
+        {
+            System.out.println("Sorry element not found. So index: "+c);
+        }
+    }
+}
