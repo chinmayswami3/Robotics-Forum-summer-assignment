@@ -1,0 +1,51 @@
+import java.util.Scanner;
+class Merge_sort_array
+{
+    public static void main()
+    {
+        Scanner sc= new Scanner(System.in);
+        int alen,blen,clen,i,j,min,t;
+        System.out.print("Enter length of array 1:");
+        alen=sc.nextInt();
+        System.out.print("Enter length of array 2:");
+        blen=sc.nextInt();
+        clen=alen+blen;
+        int a[]=new int[alen];
+        int b[]=new int[blen];
+        int c[]=new int[clen];
+        for(i=0;i<alen;i++)
+        {
+            System.out.print("Enter element for array 1:");
+            a[i]=sc.nextInt();
+        }
+        for(i=0;i<blen;i++)
+        {
+            System.out.print("Enter element for array 2:");
+            b[i]=sc.nextInt();
+        }
+        System.arraycopy(a,0,c,0,alen);
+        System.arraycopy(b,0,c,alen,blen);
+        System.out.print("Merged array:");
+        for(i=0;i<clen;i++)
+        {
+            System.out.print(c[i]);
+        }
+        for(i=0;i<clen-1;i++)
+        {
+            for(j=i+1;j<clen;j++)
+            {
+                if(c[j]<c[i])
+                {
+                    t=c[j];
+                    c[j]=c[i];
+                    c[i]=t;
+                }
+            }
+        }
+        System.out.print("\nNew sorted merged array:");
+        for(i=0;i<clen;i++)
+        {
+            System.out.print(c[i]);
+        }
+    }
+}
