@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class Max_consecutive_sum
+{
+    public static void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        int a[],i,j,n,num,sum=0,msum=0;
+        System.out.print("Enter number of elements: ");
+        n=sc.nextInt();
+        System.out.println("");
+        a=new int[n];
+        for(i=0;i<n;i++)
+        {
+            System.out.print("Enter element: ");
+            a[i]=sc.nextInt();
+            System.out.println("");
+        }
+        System.out.print("Enter number: ");
+        num=sc.nextInt();
+        System.out.println("");
+        for(i=0;i<=n-num;i++)
+        {
+            sum=0;
+            for(j=0;j<num;j++)
+            {
+                sum=sum+a[i+j];
+            }
+            if(sum>=msum)
+            {
+                msum=sum;
+            }
+        }
+        System.out.println("Max sum of "+num+" consecutive elements is: "+msum);
+    }
+}
