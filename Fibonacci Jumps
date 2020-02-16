@@ -1,0 +1,31 @@
+import java.util.Scanner;
+class Fib_jump
+{
+    public static void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=0,b=1,c,n,i;
+        System.out.print("Enter the no. of elements of the array:");
+        n=sc.nextInt();
+        //System.out.println("Enter elements");
+        int d[]=new int[n];
+        for(i=0;i<n;i++)
+        {
+            System.out.println("Enter element"+(i+1)+":");
+            d[i]=sc.nextInt();
+        }
+        i=0;
+        do
+        {
+            c=a+b;
+            i=i+c;
+            d[i]++;
+            b=a;
+            a=b;
+        }while(c<n);
+        for(i=0;i<n;i++)
+        {
+            System.out.print(d[i]);
+        }
+    }
+}
